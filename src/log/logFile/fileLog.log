@@ -22793,3 +22793,63 @@ CREATE TABLE webhook (
 2025-01-22 15:21:05,348 - uvicorn.error - INFO - Application shutdown complete.
 2025-01-22 15:21:05,354 - uvicorn.error - INFO - Finished server process [4476]
 2025-01-22 15:21:05,354 - uvicorn.error - INFO - Finished server process [4476]
+2025-01-22 16:00:42,168 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:00:42,168 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:00:42,217 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("exchanges")
+2025-01-22 16:00:42,217 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("exchanges")
+2025-01-22 16:00:42,219 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 16:00:42,219 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 16:00:42,235 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("webhook")
+2025-01-22 16:00:42,235 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("webhook")
+2025-01-22 16:00:42,235 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 16:00:42,235 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 16:00:42,238 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-01-22 16:00:42,238 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-01-22 16:00:42,250 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-01-22 16:00:42,295 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 16:00:42,301 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 16:00:42,310 - apscheduler.scheduler - INFO - Added job "run_bot" to job store "default"
+2025-01-22 16:00:42,310 - apscheduler.scheduler - INFO - Added job "WebhookUtils.run_tests" to job store "default"
+2025-01-22 16:00:42,310 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-22 16:00:42,317 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-01-22 16:00:42,319 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-01-22 16:50:42.295966+01:00 (in 2999.976820 seconds)
+2025-01-22 16:00:42,428 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-22 16:00:42,782 - uvicorn.error - INFO - Started server process [3312]
+2025-01-22 16:00:42,786 - uvicorn.error - INFO - Waiting for application startup.
+2025-01-22 16:00:42,791 - uvicorn.error - INFO - Application startup complete.
+2025-01-22 16:00:42,845 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-01-22 16:00:56,930 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:00:56,930 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:00:56,982 - sqlalchemy.engine.Engine - INFO - SELECT exchanges.id AS exchanges_id, exchanges.bank_name AS exchanges_bank_name, exchanges.exchanges_values AS exchanges_exchanges_values, exchanges.updated_at AS exchanges_updated_at 
+FROM exchanges
+2025-01-22 16:00:56,982 - sqlalchemy.engine.Engine - INFO - SELECT exchanges.id AS exchanges_id, exchanges.bank_name AS exchanges_bank_name, exchanges.exchanges_values AS exchanges_exchanges_values, exchanges.updated_at AS exchanges_updated_at 
+FROM exchanges
+2025-01-22 16:00:56,982 - sqlalchemy.engine.Engine - INFO - [generated in 0.00147s] ()
+2025-01-22 16:00:56,982 - sqlalchemy.engine.Engine - INFO - [generated in 0.00147s] ()
+2025-01-22 16:00:56,988 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-01-22 16:00:56,988 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-01-22 16:00:56,988 - MyAppLogger - INFO - GET /exchanges/ HTTP/1.1 status = 200
+2025-01-22 16:00:56,988 - MyAppLogger - INFO - GET /exchanges/ HTTP/1.1 status = 200
+2025-01-22 16:01:07,939 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:01:07,939 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 16:01:07,960 - sqlalchemy.engine.Engine - INFO - SELECT exchanges.id AS exchanges_id, exchanges.bank_name AS exchanges_bank_name, exchanges.exchanges_values AS exchanges_exchanges_values, exchanges.updated_at AS exchanges_updated_at 
+FROM exchanges 
+WHERE exchanges.bank_name = ?
+ LIMIT ? OFFSET ?
+2025-01-22 16:01:07,960 - sqlalchemy.engine.Engine - INFO - SELECT exchanges.id AS exchanges_id, exchanges.bank_name AS exchanges_bank_name, exchanges.exchanges_values AS exchanges_exchanges_values, exchanges.updated_at AS exchanges_updated_at 
+FROM exchanges 
+WHERE exchanges.bank_name = ?
+ LIMIT ? OFFSET ?
+2025-01-22 16:01:07,960 - sqlalchemy.engine.Engine - INFO - [generated in 0.00301s] ('BNI', 1, 0)
+2025-01-22 16:01:07,960 - sqlalchemy.engine.Engine - INFO - [generated in 0.00301s] ('BNI', 1, 0)
+2025-01-22 16:01:07,965 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-01-22 16:01:07,965 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-01-22 16:01:07,965 - MyAppLogger - INFO - GET /exchanges/detail/BNI/ HTTP/1.1 status = 204
+2025-01-22 16:01:07,965 - MyAppLogger - INFO - GET /exchanges/detail/BNI/ HTTP/1.1 status = 204
+2025-01-22 16:01:29,104 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2025-01-22 16:01:33,211 - MyAppLogger - INFO - POST /webhook/ HTTP/1.1 status = 400
+2025-01-22 16:01:33,211 - MyAppLogger - INFO - POST /webhook/ HTTP/1.1 status = 400
+2025-01-22 16:01:40,242 - uvicorn.error - INFO - Shutting down
+2025-01-22 16:01:40,362 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-01-22 16:01:40,367 - uvicorn.error - INFO - Application shutdown complete.
+2025-01-22 16:01:40,372 - uvicorn.error - INFO - Finished server process [3312]

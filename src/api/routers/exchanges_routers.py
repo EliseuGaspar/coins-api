@@ -9,11 +9,13 @@ from src.helpers import Convertor
 from src.log import logg
 from src.storage.models import Exchanges
 
-
 exchange_routers = APIRouter(prefix="/exchanges", tags=["Exchanges"])
 
 
 class ExchangesRouters:
+    """
+    Routers for handling exchanges-related API endpoints.
+    """
 
     @exchange_routers.get(
         '/',
@@ -21,10 +23,13 @@ class ExchangesRouters:
         description="Return all exchanges registered in the database",
     )
     async def get_all_exchanges() -> JSONResponse:
-        """"""
-        exchanges: list[Exchanges] = (
-            await ExchangesController.find_all_exchanges()
-        )
+        """
+        Retrieve all registered exchanges from the database.
+
+        Returns:
+            JSONResponse: A JSON response containing a list of exchanges or an empty list if no exchanges are found.
+        """
+        exchanges: list[Exchanges] = await ExchangesController.find_all_exchanges()
         exchnages_formated: list[dict] = Convertor.exchange_to_dict(
             exchange=exchanges, many=True
         )
@@ -37,14 +42,19 @@ class ExchangesRouters:
         description="Returns the exchange of a specific bank",
     )
     async def get_one_exchange(bank_name: str = None) -> JSONResponse:
-        """"""
-        exchange: Optional[Exchanges] = (
-            await ExchangesController.find_exchanges_for_bank_name(bank_name)
-        )
+        """
+        Retrieve the exchange details for a specific bank.
+
+        Args:
+            bank_name (str): The name of the bank whose exchange details are being retrieved.
+
+        Returns:
+            JSONResponse: A JSON response containing the exchange details if found,
+                          or an error message if the bank is not registered.
+        """
+        exchange: Optional[Exchanges] = await ExchangesController.find_exchanges_for_bank_name(bank_name)
         if exchange:
-            exchnage_formated: dict = Convertor.exchange_to_dict(
-                exchange=exchange
-            )
+            exchnage_formated: dict = Convertor.exchange_to_dict(exchange=exchange)
             logg.info_message(
                 f"GET /exchanges/detail/{bank_name}/ HTTP/1.1 status = 200"
             )
