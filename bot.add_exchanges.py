@@ -16,7 +16,7 @@ from src.scrappy.sites import (
 )
 
 bot = BOTScrapy(
-    [BAI]
+    [BAI, SOL, BFA, BCI, BCA, BIR, BPC, BNI, Keve, CaixaAngola, StandardBank]
 )
 
 if __name__ == '__main__':
