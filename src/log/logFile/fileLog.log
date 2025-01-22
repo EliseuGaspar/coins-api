@@ -22654,3 +22654,142 @@ WHERE webhook.active = 1
 2025-01-22 11:30:16,683 - uvicorn.error - INFO - Application shutdown complete.
 2025-01-22 11:30:16,683 - uvicorn.error - INFO - Finished server process [11352]
 2025-01-22 11:30:16,683 - uvicorn.error - INFO - Finished server process [11352]
+2025-01-22 15:21:01,252 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 15:21:01,252 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 15:21:01,252 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("exchanges")
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("exchanges")
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("exchanges")
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,274 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("exchanges")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("exchanges")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("exchanges")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("webhook")
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,288 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-01-22 15:21:01,298 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE exchanges (
+	id INTEGER NOT NULL, 
+	bank_name VARCHAR(100) NOT NULL, 
+	exchanges_values JSON NOT NULL, 
+	updated_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,298 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE exchanges (
+	id INTEGER NOT NULL, 
+	bank_name VARCHAR(100) NOT NULL, 
+	exchanges_values JSON NOT NULL, 
+	updated_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,298 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE exchanges (
+	id INTEGER NOT NULL, 
+	bank_name VARCHAR(100) NOT NULL, 
+	exchanges_values JSON NOT NULL, 
+	updated_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,321 - sqlalchemy.engine.Engine - INFO - [no key 0.00096s] ()
+2025-01-22 15:21:01,321 - sqlalchemy.engine.Engine - INFO - [no key 0.00096s] ()
+2025-01-22 15:21:01,321 - sqlalchemy.engine.Engine - INFO - [no key 0.00096s] ()
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_exchanges_bank_name ON exchanges (bank_name)
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_exchanges_bank_name ON exchanges (bank_name)
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_exchanges_bank_name ON exchanges (bank_name)
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - [no key 0.00041s] ()
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - [no key 0.00041s] ()
+2025-01-22 15:21:01,786 - sqlalchemy.engine.Engine - INFO - [no key 0.00041s] ()
+2025-01-22 15:21:01,956 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE webhook (
+	id INTEGER NOT NULL, 
+	url VARCHAR(255) NOT NULL, 
+	active BOOLEAN, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,956 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE webhook (
+	id INTEGER NOT NULL, 
+	url VARCHAR(255) NOT NULL, 
+	active BOOLEAN, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,956 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE webhook (
+	id INTEGER NOT NULL, 
+	url VARCHAR(255) NOT NULL, 
+	active BOOLEAN, 
+	PRIMARY KEY (id)
+)
+
+
+2025-01-22 15:21:01,957 - sqlalchemy.engine.Engine - INFO - [no key 0.00129s] ()
+2025-01-22 15:21:01,957 - sqlalchemy.engine.Engine - INFO - [no key 0.00129s] ()
+2025-01-22 15:21:01,957 - sqlalchemy.engine.Engine - INFO - [no key 0.00129s] ()
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_webhook_url ON webhook (url)
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_webhook_url ON webhook (url)
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_webhook_url ON webhook (url)
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - [no key 0.00165s] ()
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - [no key 0.00165s] ()
+2025-01-22 15:21:02,076 - sqlalchemy.engine.Engine - INFO - [no key 0.00165s] ()
+2025-01-22 15:21:02,219 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-01-22 15:21:02,219 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-01-22 15:21:02,219 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-01-22 15:21:02,219 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-01-22 15:21:02,219 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-01-22 15:21:02,244 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 15:21:02,244 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 15:21:02,244 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 15:21:02,244 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Added job "run_bot" to job store "default"
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Added job "run_bot" to job store "default"
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Added job "WebhookUtils.run_tests" to job store "default"
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Added job "WebhookUtils.run_tests" to job store "default"
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-22 15:21:02,261 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-22 15:21:02,261 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-01-22 15:21:02,261 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-01-22 15:21:02,268 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-01-22 16:11:02.244235+01:00 (in 2999.975774 seconds)
+2025-01-22 15:21:02,268 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-01-22 16:11:02.244235+01:00 (in 2999.975774 seconds)
+2025-01-22 15:21:02,390 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-22 15:21:02,390 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-22 15:21:02,827 - uvicorn.error - INFO - Started server process [4476]
+2025-01-22 15:21:02,827 - uvicorn.error - INFO - Started server process [4476]
+2025-01-22 15:21:02,835 - uvicorn.error - INFO - Waiting for application startup.
+2025-01-22 15:21:02,835 - uvicorn.error - INFO - Waiting for application startup.
+2025-01-22 15:21:02,849 - uvicorn.error - INFO - Application startup complete.
+2025-01-22 15:21:02,849 - uvicorn.error - INFO - Application startup complete.
+2025-01-22 15:21:02,856 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-01-22 15:21:02,856 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-01-22 15:21:05,237 - uvicorn.error - INFO - Shutting down
+2025-01-22 15:21:05,237 - uvicorn.error - INFO - Shutting down
+2025-01-22 15:21:05,346 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-01-22 15:21:05,346 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-01-22 15:21:05,348 - uvicorn.error - INFO - Application shutdown complete.
+2025-01-22 15:21:05,348 - uvicorn.error - INFO - Application shutdown complete.
+2025-01-22 15:21:05,354 - uvicorn.error - INFO - Finished server process [4476]
+2025-01-22 15:21:05,354 - uvicorn.error - INFO - Finished server process [4476]
