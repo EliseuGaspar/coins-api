@@ -1,17 +1,18 @@
 # from os import getenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from src.log import configure_global_logging
+from .settings import Settings
+
 
 configure_global_logging()
 
 
 api = FastAPI(
-    title="CoinsAPI",
-    description="APi de taxa de câmbio dos principais bancos de Angola",
-    version="1.0",
-    contact={"email": "eliseugaspar4@gmail.com"},
+    title=Settings.app_title,
+    description=Settings.app_description,
+    version=Settings.app_version,
+    contact=Settings.app_dev_contact,
 )
 
 api.add_middleware(
@@ -21,3 +22,6 @@ api.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+api.debug = Settings.debug
+

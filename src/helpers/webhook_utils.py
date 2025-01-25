@@ -3,8 +3,10 @@ import asyncio
 
 from src.api.controllers import ExchangesController, WebhookController
 from src.log import logg
+from src.api.core import Settings
 from src.storage.models import Exchanges, Webhook
 from .convertor import Convertor
+from .validators import Urls
 
 
 class WebhookUtils:
@@ -45,6 +47,11 @@ class WebhookUtils:
         Returns:
             bool: True if the URL responds successfully, otherwise False.
         """
+        url_valid: bool = cls.is_webhook_url_valid(url)
+
+        if not url_valid:
+            return False
+
         try:
             response = requests.post(
                 url=url,
@@ -85,3 +92,25 @@ class WebhookUtils:
                         logg.error_message(f"Failed to send data to({url.url}) - Status code: {response.status_code}")
                 except Exception as e:
                     logg.error_message(f"Error sending data to({url.url}) - Error: {e}")
+
+    @classmethod
+    def is_webhook_url_valid(cls, url: str) -> bool:
+        """"""
+        if Settings.mode == "development":
+            return (
+                Urls.is_valid_url(url) and
+                Urls.has_valid_hostname(url) and
+                Urls.has_safe_port(url) and
+                Urls.has_safe_query(url) and
+                Urls.is_length_valid(url)
+            )
+        else:
+            return (
+                Urls.is_valid_url(url) and
+                not Urls.is_private_or_local(url) and
+                Urls.has_valid_hostname(url) and
+                Urls.has_safe_port(url) and
+                Urls.has_safe_query(url) and
+                Urls.is_length_valid(url)
+            )
+            
