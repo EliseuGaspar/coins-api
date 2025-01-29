@@ -1,5 +1,7 @@
 ## Coins API
 
+**Status**: Terminado!
+
 #### DESCRIÇÃO
 
 Este projeto é uma API Rest aberta com as informações de câmbio dos principais bancos de Angola.
